@@ -1,0 +1,6 @@
+{
+  "name": "SMS Scheduler",
+  "description": "SMS Sender, Receiver & Scheduler with Local Contact Integration",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
