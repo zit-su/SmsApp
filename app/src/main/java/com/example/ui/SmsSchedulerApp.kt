@@ -170,16 +170,27 @@ fun SmsSchedulerApp(viewModel: SmsViewModel) {
             }
         },
         floatingActionButton = {
-            if (activeThreadPhone == null && selectedTab == 1) {
-                ExtendedFloatingActionButton(
-                    text = { Text("Schedule SMS") },
-                    icon = { Icon(Icons.Default.AddAlarm, contentDescription = "Schedule SMS") },
-                    onClick = {
-                        prefilledContactForSchedule = null
-                        showScheduleDialog = true
-                    },
-                    modifier = Modifier.testTag("schedule_sms_fab")
-                )
+            if (activeThreadPhone == null) {
+                if (selectedTab == 0) {
+                    ExtendedFloatingActionButton(
+                        text = { Text("Start chat") },
+                        icon = { Icon(Icons.Default.Chat, contentDescription = "Start chat") },
+                        onClick = {
+                            selectedTab = 2
+                        },
+                        modifier = Modifier.testTag("start_chat_fab")
+                    )
+                } else if (selectedTab == 1) {
+                    ExtendedFloatingActionButton(
+                        text = { Text("Schedule SMS") },
+                        icon = { Icon(Icons.Default.AddAlarm, contentDescription = "Schedule SMS") },
+                        onClick = {
+                            prefilledContactForSchedule = null
+                            showScheduleDialog = true
+                        },
+                        modifier = Modifier.testTag("schedule_sms_fab")
+                    )
+                }
             }
         }
     ) { paddingValues ->
